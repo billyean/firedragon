@@ -1,24 +1,47 @@
-main {
-  padding-top: 30px;
+body {
+  color: blue;
+  font-family: Calibri;
 }
 
-nav {
-  
-  ul {
-    list-style-type: none;
-    margin:0;
-    padding:0;
-  }
+div {
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
+  border: 2px solid purple
+}
 
-  li {
-    display: inline-block;
-    margin:5px;
-    padding:2px;
-    border: black solid 2px;
+li:first-child {
+  color: red;
+}
 
-    a { 
-      text-decoration: none;
-      color: blue;
-    }
+li + li {
+  color: green;
+}
+
+li:last-child {
+  color: blue
+}
+
+@keyframes borderBlink {
+  0% {
+    border-color: red
   }
+  50% {
+    border-color: green
+  }
+  100% {
+    border-color: blue
+  }
+}
+
+.borderBlink{
+  border:1px solid green
+}
+
+.borderBlink:hover {
+  animation: borderBlink 1s step-end infinite;
+}
+
+.pageTile {
+  color: red;
 }
