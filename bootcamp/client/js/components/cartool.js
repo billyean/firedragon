@@ -56,6 +56,15 @@ export class CarTool extends React.Component {
         });
     }
 
+    sort = (col) => {
+        console.log(col);
+        const sortedCars = this.state.cars.setSortBy(col);
+        console.log(sortedCars);
+        this.setState({
+            cars: sortedCars,
+        });
+    }
+
     render() {
         return <div>
             {/*<BootstrapTable data={this.state.cars}>*/}
@@ -89,9 +98,9 @@ export class CarTool extends React.Component {
                         <td>{car.getFormattedPrice()}</td>
                     </tr>;
                 })}
-                {/*<tr>*/}
-                    {/*<td colSpan='6'><button onClick={this.sort('id')}>Sort by ID</button><button onClick={this.sort('price')}>Sort by Price</button><button onClick={this.sort('year')}>Sort by Year</button></td>*/}
-                {/*</tr>*/}
+                <tr>
+                    <td colSpan='6'><button onClick={() => this.sort('id')}>Sort by ID</button><button onClick={() => this.sort('price')}>Sort by Price</button><button onClick={() => this.sort('year')}>Sort by Year</button></td>
+                </tr>
                 </tbody>
             </table>
             <form>
@@ -110,7 +119,7 @@ export class CarTool extends React.Component {
                     <tr>
                         <td><label htmlFor="Color : ">Color Hex Code: </label></td>
                         <td><input type="color" name="colorHexCode" value={this.state.colorHexCode} onChange={this.onChange}/></td>
-                        <td><label>{this.state.colorHexCode == ''  ? this.state.colorHexCode: 'You chose color ' + colorNamer(this.state.colorHexCode).html[0].name }</label></td>
+                        <td><label>{this.state.colorHexCode == ''  ? '' : 'Your car model is ' + colorNamer(this.state.colorHexCode).html[0].name}</label></td>
                     </tr>
                     <tr>
                         <td><label htmlFor="Year : ">Year : </label></td>

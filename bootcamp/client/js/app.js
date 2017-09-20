@@ -4,9 +4,9 @@ import {CarTool} from './components/cartool';
 import {Car} from './model/car';
 
 const carList = [
-    new Car({id: 1, make: 'Toyota', model: 'Prius', year: 2014, colorHexCode: '#C0C0C0', price: 10000}),
+    new Car({id: 1, make: 'Toyota', model: 'Prius', year: 2015, colorHexCode: '#C0C0C0', price: 10000}),
     new Car({id: 2, make: 'Chevy', model: 'Equinox', year: 2017, colorHexCode: '#000000', price: 30000}),
-    new Car({id: 3, make: 'Mazda', model: 'CX-5', year: 2014, colorHexCode: '#FF0000', price: 20000})
+    new Car({id: 3, make: 'Mazda', model: 'CX-5', year: 2012, colorHexCode: '#FF0000', price: 20000})
 ];
 
 ReactDOM.render(<CarTool cars={carList}/>, document.querySelector('main'));
