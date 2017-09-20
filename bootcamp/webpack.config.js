@@ -10,8 +10,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // configure the environment object for development mode
-// const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
-const ENV = process.env.ENV = process.env.NODE_ENV = 'production';
+const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
+// const ENV = process.env.ENV = process.env.NODE_ENV = 'production';
 const MINIFY = false;
 
 // source and distribution folder paths

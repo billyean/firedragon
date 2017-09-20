@@ -1,47 +1,103 @@
-body {
-  color: blue;
+//body {
+//  color: blue;
+//  font-family: Calibri;
+//}
+
+//div {
+//  color: red;
+//  text-decoration: underline;
+//  font-weight: bold;
+//  border: 2px solid purple
+//}
+//
+//li:first-child {
+//  color: red;
+//}
+//
+//li + li {
+//  color: green;
+//}
+//
+//li:last-child {
+//  color: blue
+//}
+//
+//@keyframes borderBlink {
+//  0% {
+//    border-color: red
+//  }
+//  50% {
+//    border-color: green
+//  }
+//  100% {
+//    border-color: blue
+//  }
+//}
+//
+//.borderBlink{
+//  border:1px solid green
+//}
+//
+//.borderBlink:hover {
+//  animation: borderBlink 1s step-end infinite;
+//}
+//
+//.pageTile {
+//  color: red;
+//}
+
+//div > div {
+//  display: block;
+//  padding: 10px;
+//  border: 2px solid blue;
+//  padding:  50px;
+//  float: right;
+//}
+//
+//.pullLeft {
+//  float: left;
+//}
+//
+//.clearLeft {
+//  clear: left;
+//}
+
+//div {
+//  display: block;
+//  padding-left: 80px;
+//  padding-right: 80px;
+//  border: 2px solid red;
+//  float: left;
+//}
+
+th {
   font-family: Calibri;
-}
-
-div {
-  color: red;
-  text-decoration: underline;
-  font-weight: bold;
-  border: 2px solid purple
-}
-
-li:first-child {
+  font-size: 14pt;
   color: red;
 }
 
-li + li {
-  color: green;
+td {
+  font-family: Calibri;
+  font-size: 14pt;
+  color: blue;
 }
 
-li:last-child {
-  color: blue
+label {
+  font-family: Calibri;
+  font-size: 14pt;
 }
 
-@keyframes borderBlink {
-  0% {
-    border-color: red
-  }
-  50% {
-    border-color: green
-  }
-  100% {
-    border-color: blue
-  }
+td_center {
+  text-align: match-parent;
 }
 
-.borderBlink{
-  border:1px solid green
-}
+//devRight {
+//  float: right;
+//}
+//
+//.pullLeft {
+//  display: block;
+//  clear: left;
+//  padding: 2px;
+//}
 
-.borderBlink:hover {
-  animation: borderBlink 1s step-end infinite;
-}
-
-.pageTile {
-  color: red;
-}
