@@ -2,24 +2,21 @@ import React from 'react';
 import '../../scss/styles.scss';
 import {Car, Cars} from '../model/car';
 import colorNamer from 'color-namer';
+import {CarForm} from "./car-form";
 
 export class CarTool extends React.Component {
     constructor(props) {
         super(props);
+        this.cars = new Cars(props.cars.slice());
         this.state = {
-            cars: new Cars(props.cars.slice()),
-            id: '',
-            make: '',
-            model: '',
-            colorHexCode: '',
-            year: 2000,
-            price: 0
+            cars: this.cars,
         }
-        this.onChange = this.onChange.bind(this);
+        // this.onChange = this.onChange.bind(this);
+        // this.form = new CarForm(this);
     }
 
 
-    onNew = () => {
+    onNew = (car) => {
         // this.state.cars.append(new Car({
         //     id: this.state.cars.nextID(),
         //     make: this.state.make,
@@ -37,31 +34,22 @@ export class CarTool extends React.Component {
         //     price: this.state.price
         // }))
         //
+        car.setID(this.cars.nextID());
+        this.cars.append(car);
         this.setState({
-            cars: this.state.cars.append(new Car({
-                id: this.state.cars.nextID(),
-                make: this.state.make,
-                model: this.state.model,
-                colorHexCode: this.state.colorHexCode,
-                year: this.state.year,
-                price: this.state.price
-            })),
+            cars: this.cars,
         });
-        // console.log(this.state.cars.getCars().length);
     }
 
-    onChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.type === 'number' ?  Number(e.target.value) : e.target.value,
-        });
+    getNextID = () => {
+        return this.state.cars.nextID();
     }
+
 
     sort = (col) => {
-        console.log(col);
-        const sortedCars = this.state.cars.setSortBy(col);
-        console.log(sortedCars);
+        this.cars.setSortBy(col);
         this.setState({
-            cars: sortedCars,
+            cars: this.cars,
         });
     }
 
@@ -88,14 +76,14 @@ export class CarTool extends React.Component {
                 </tr>
                 </thead>
                 <tbody>
-                {this.state.cars.getCars().map(car => {
+                {this.state.cars.cars.map(car => {
                     return <tr>
-                        <td>{car.id}</td>
-                        <td>{car.make}</td>
-                        <td>{car.model}</td>
-                        <td>{car.year}</td>
-                        <td  style={{color : car.colorHexCode}}>{car.getColorName()}</td>
-                        <td>{car.getFormattedPrice()}</td>
+                        <td style={{color : car.colorHexCode}}>{car.id}</td>
+                        <td style={{color : car.colorHexCode}}>{car.make}</td>
+                        <td style={{color : car.colorHexCode}}>{car.model}</td>
+                        <td style={{color : car.colorHexCode}}>{car.year}</td>
+                        <td style={{color : car.colorHexCode}}>{car.getColorName()}</td>
+                        <td style={{color : car.colorHexCode}}>{car.getFormattedPrice()}</td>
                     </tr>;
                 })}
                 <tr>
@@ -103,60 +91,7 @@ export class CarTool extends React.Component {
                 </tr>
                 </tbody>
             </table>
-            <form>
-                <table>
-                    <tbody>
-                    <tr>
-                        <td><label htmlFor="Make : ">Make : </label></td>
-                        <td><input type="text" name="make" value={this.state.make} onChange={this.onChange}/></td>
-                        <td><label>{this.state.make == ''  ? this.state.make: 'Your input is ' + this.state.make}</label></td>
-                    </tr>
-                    <tr>
-                        <td><label htmlFor="Model : ">Model : </label></td>
-                        <td><input type="text" name="model" value={this.state.model} onChange={this.onChange}/></td>
-                        <td><label>{this.state.model == ''  ? this.state.model: 'Your car model is ' + this.state.model}</label></td>
-                    </tr>
-                    <tr>
-                        <td><label htmlFor="Color : ">Color Hex Code: </label></td>
-                        <td><input type="color" name="colorHexCode" value={this.state.colorHexCode} onChange={this.onChange}/></td>
-                        <td><label>{this.state.colorHexCode == ''  ? '' : 'Your car model is ' + colorNamer(this.state.colorHexCode).html[0].name}</label></td>
-                    </tr>
-                    <tr>
-                        <td><label htmlFor="Year : ">Year : </label></td>
-                        <td><input type="number" name="year" value={this.state.year} onChange={this.onChange}/></td>
-                        <td><label>{this.state.year == ''  ? this.state.year: 'Year of your car is ' + this.state.year}</label></td>
-                    </tr>
-                    <tr>
-                        <td><label htmlFor="Price : ">Price : </label></td>
-                        <td><input type="number" name="price" value={this.state.price} onChange={this.onChange}/></td>
-                        <td><label>{this.state.price == 0  ? '' : 'Your price is ' + this.state.price}</label></td>
-                    </tr>
-                    <tr>
-                        <td colSpan="2" className="td_center"><button type="button" onClick={this.onNew}>New Car</button></td>
-                    </tr>
-                    </tbody>
-                </table>
-                {/*<div>*/}
-                {/*<label htmlFor="Make : ">Make : </label>*/}
-                {/*<input type="text" name="make" value={this.state.make} onChange={this.onChange} />*/}
-                {/*</div>*/}
-                {/*<div>*/}
-                {/*<label htmlFor="Make : ">Model: </label>*/}
-                {/*<input type="text" name="model" value={this.state.model} onChange={this.onChange} />*/}
-                {/*</div>*/}
-                {/*<div>*/}
-                {/*<label htmlFor="Make : ">Color: </label>*/}
-                {/*<input type="text" name="color" value={this.state.color} onChange={this.onChange} />*/}
-                {/*</div>*/}
-                {/*<div>*/}
-                {/*<label htmlFor="Make : ">Year : </label>*/}
-                {/*<input type="text" name="year" value={this.state.year} onChange={this.onChange} />*/}
-                {/*</div>*/}
-                {/*<div>*/}
-                {/*<label htmlFor="Make : ">Price: </label>*/}
-                {/*<input type="text" name="price" value={this.state.price} onChange={this.onChange} />*/}
-                {/*</div>*/}
-            </form>
+            <CarForm onSubmit={this.onNew}/>
         </div>;
     }
 
