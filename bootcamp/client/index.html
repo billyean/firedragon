@@ -10,6 +10,112 @@
 
 <body>
   <main class="container-fluid"></main>
+  <script>
+////      t1 = setTimeout(() => {
+////          console.log("Timeout1");
+////      }, 2000);
+////
+////      t2 = setTimeout(() => {
+////          console.log("Timeout2");
+////      }, 2000);
+////
+////      t3 = setTimeout(() => {
+////          console.log("Timeout3");
+////      }, 2000);
+////
+////      allDone = setTimeout(() => {
+////          console.log("allDone");
+////      }, 2000);
+//
+//
+//      const p1 = new Promise((resolve) => {
+//          setTimeout(() => {
+//              console.log("Timeout1");
+////              resolve("Timeout1");
+//              resolve("Timeout1");
+//          }, 3000);
+//      });
+//      const p2 = new Promise((resolve) => {
+//          setTimeout(() => {
+//              console.log("Timeout2");
+////              resolve("Timeout2");
+//              resolve("Timeout2");
+//          }, 3000);
+//      });
+//      const p3 = new Promise((resolve) => {
+//          setTimeout(() => {
+//              console.log("Timeout3");
+////              resolve("Timeout3");
+//              resolve("Timeout3");
+//          }, 3000);
+//      });
+
+//Promise.all([p1, p2, p3]).then((results) => {
+//    console.log(results);
+//});
+
+//      setTimeout(() => Promise.all([p1, p2, p3]).then((results) => {
+//          console.log(results);
+//      }), 5000);
+
+
+
+      //    const xhr = new XMLHttpRequest();
+//    xhr.addEventListener('readystatechange', () => {
+//        if (xhr.readyState === 4 && xhr.status === 200) {
+//            console.log(JSON.parse(xhr.responseText));
+//        }
+//    });
+//
+//    // Post need set header
+//    // false is synchorous call, default is true - asynchorous
+//    xhr.open('GET', 'http://localhost:3010/widgets', false);
+//    xhr.send();
+//
+//    console.log('made it here');
+
+//        ajax = (options) => {
+//            return new Promise((resolve, reject) => {
+//                const xhr = new XMLHttpRequest();
+//
+//                xhr.addEventListener('readystatechange', () => {
+//                    if (xhr.readyState === 4 && xhr.status === 200) {
+//                        console.log(JSON.parse(xhr.responseText));
+//                    } else {
+//
+//                    }
+//                });
+//
+//
+//                xhr.open(object.method, object.url, false);
+//                xhr.send();
+//            });
+//        }
+//    ajax = (caller, success, failure) => {
+//        const xhr = new XMLHttpRequest();
+//
+//        xhr.addEventListener('readystatechange', () => {
+//            if (xhr.readyState === 4 && xhr.status === 200) {
+//                success(JSON.parse(xhr.responseText));
+//            } else {
+//                failure(xhr.err);
+//            }
+//        });
+//
+//        xhr.open(caller.method, caller.url);
+//        xhr.send();
+//    }
+
+//        ajax({method: 'GET', url: 'http://localhost:3010/widgets'}).then((xhr) => {
+//
+//        });
+
+//    ajax({method: 'GET', url: 'http://localhost:3010/widgets'}, (t) => {
+//        console.log(t);
+//    }, (e) => {
+//        console.log(e);
+//    });
+  </script>
 </body>
 
 </html>

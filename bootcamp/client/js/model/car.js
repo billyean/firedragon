@@ -46,6 +46,9 @@ export class Car {
 export class Cars {
     constructor(cars) {
         this._cars = cars.slice();
+
+        console.log(this._cars);
+        console.dir(this._cars);
         this.setSortBy('id');
     }
 

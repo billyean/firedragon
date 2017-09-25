@@ -23,14 +23,14 @@
       "make": "GM",
       "model": "Volt",
       "year": 2017,
-      "color": "blue",
+      "colorHexCode": "#0084b4",
       "price": 21000
     },
     {
       "make": "Ford",
       "model": "T",
       "year": 2013,
-      "color": "red",
+      "colorHexCode": "#C0C0C0",
       "price": 123,
       "id": 2
     }
