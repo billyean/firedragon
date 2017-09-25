@@ -3,6 +3,11 @@
 // import {CarTool} from './components/cartool';
 // import {Car} from './model/car';
 
+// 1. Peer function can't modify the parameters
+// 2.
+// 3.
+// 4. Peer function only returns
+// 5. Peer function can't mutate the state.
 
 
 const createAddAction = value => ({type: 'ADD', value});
@@ -11,35 +16,131 @@ const createMultiplyAction = value => ({type: 'MULTIPLY', value});
 const createDivideAction = value => ({type: 'DIVIDE', value});
 const createModuloAction = value => ({type: 'MODULO', value});
 
-const nums = [
-    createAddAction(1),
-    createSubtractAction(2),
-    createMultiplyAction(3),
-    createDivideAction(4),
-    createModuloAction(5)
-    ];
+// const nums = [
+//     createAddAction(1),
+//     createSubtractAction(2),
+//     createMultiplyAction(3),
+//     createDivideAction(4),
+//     createModuloAction(5)
+//     ];
+//
+// const initialState = 0;
+//
+// const sum = nums.reduce((state, action) => {
+//     console.log('state: ', state, 'action: ', action.type)
+//         switch (action.type) {
+//             case 'ADD':
+//                 return state + action.value;
+//             case 'SUBTRACT':
+//                 return state - action.value;
+//             case 'MULTIPLY':
+//                 return state * action.value;
+//             case 'DIVIDE':
+//                 return state / action.value;
+//             case 'MODULO':
+//                 return state % action.value;
+//             default:
+//                 return state;
+//         }
+//     }, 0);
+
+const createStore = (reducer) => {
+    let currentState = undefined;
+    const subscriptions = [];
+
+    return {
+        getState: () => currentState,
+        subscribe: cb => subscriptions.push(cb),
+        dispatch: action => {
+          currentState = reducer(currentState, action);
+          subscriptions.forEach(cb => cb());
+        },
+    };
+};
 
 const initialState = 0;
 
-const sum = nums.reduce((state, action) => {
-    console.log('state: ', state, 'action: ', action.type)
-    switch (action.type) {
-        case 'ADD':
-            return state + action.value;
-        case 'SUBTRACT':
-            return state - action.value;
-        case 'MULTIPLY':
-            return state * action.value;
-        case 'DIVIDE':
-            return state / action.value;
-        case 'MODULO':
-            return state % action.value;
-        default:
-            return state;
-    }
-    }, 0);
 
-console.log(sum);
+const calcReducer = (state = {result: 0}, action) => {
+    console.log('state: ', state, 'action: ', action.type)
+        switch (action.type) {
+            case 'ADD':
+                return {...state, result: state.result + action.value};
+            case 'SUBTRACT': {
+                return Object.assign({}, state, { result: state.result - action.value});
+                }
+            case 'MULTIPLY':
+                return {...state, result: state.result * action.value};
+            case 'DIVIDE':
+                return {...state, result: state.result / action.value};
+            case 'MODULO':
+                return {...state, result: state.result % action.value};
+            default:
+                return state;
+        }
+    };
+
+const store = createStore(calcReducer);
+
+// const bindActionCreators = (actionMap, dispatch) => {
+//     const actions = {};
+//     Object.keys(actionMap).forEach(actionKey => {
+//             actions[actionKey] = (...value) => dispatch(actionMap[actionKey](...value));
+//         });
+//     return actions;
+// };
+
+const bindActionCreators = (actionMap, dispatch) => {
+
+    const actions = {};
+
+    Object.keys(actionMap).forEach(actionKey => {
+        actions[actionKey] = (...value) => dispatch(actionMap[actionKey](...value));
+    });
+
+    return actions;
+};
+
+// const  actions = bindActionCreators({
+//     add: createAddAction,
+//     subtract: createSubtractAction,
+//     multiply: createMultiplyAction,
+//     divide: createDivideAction,
+//     modulo: createModuloAction,
+// });
+
+const {add, subtract, multiply, divide, modulo} = bindActionCreators({
+    add: createAddAction,
+    subtract: createSubtractAction,
+    multiply: createMultiplyAction,
+    divide: createDivideAction,
+    modulo: createModuloAction,
+}, store.dispatch);
+
+// actions.add(1);
+// actions.subtract(2);
+// actions.multiply(3);
+// actions.divide(4);
+// actions.modulo(5);
+
+add(1);
+subtract(2);
+multiply(3);
+divide(4);
+modulo(5);
+
+// store.dispatch(createAddAction(1));
+// store.dispatch(createSubtractAction(2));
+// store.dispatch(createMultiplyAction(3));
+// store.dispatch(createDivideAction(4));
+// store.dispatch(createModuloAction(5));
+//
+//
+// store.subscribe(() => {
+//    console.log(store.getState());
+// });
+
+console.log(store.getState());
 // const ajax = new Promise((resolve, reject) => {
 //     const xhr = new XMLHttpRequest();
 //     xhr.addEventListener('readystatechange', () => {
