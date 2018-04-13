@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="utf8">
+<head>
+    <meta charset="UTF-8">
+    <title>Attribute Selectors Demo</title>
+    <style>
+        img[alt] { width: 10%; height: 10%;} /*[] means if there is attribute of type */
+        form input[type="date"] {background: red;} /* [=] matches the attribute name*/
+        ul li[class|="classA"] {color: orange;} /* [!=] matches the attribute starts with name along with -*/
+    </style>
+</head>
+<body>
+    <img id="img_haibo" src="haibo.jpg" alt="accessible"/>
+    <form>
+        <p><input type="date"/></p>
+        <p><input type="text"/></p>
+    </form>
+
+    <ul>
+        <li class="classA">Say cheese</li>
+        <li class="classAB">茄子</li>
+        <li class="classA-B">Woo</li>
+    </ul>
+</body>
+</html>
