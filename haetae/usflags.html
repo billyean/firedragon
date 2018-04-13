@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>US National Flag</title>
+    <title>US National Flag - Structure Pseudo classes selectors</title>
     <style>
         table {border: none;}
         td {width:28px; height: 18px;  color: #fff; background-color: #fff;}
-        tr:nth-of-type(odd) td:nth-of-type(8) ~ td,
+        tr:nth-of-type(odd) td:nth-of-type(6) ~ td,
         tr:nth-of-type(2n+9) td {
             background-color: #900; color: #900;
         }
@@ -16,14 +16,23 @@
             front-size: 0;
             color: #009;
         }
-        tr:nth-last-of-type(n+7) td:nth-last-of-type(n+12):after {
+        tr:nth-last-of-type(2n+7) td:nth-last-of-type(n+12):after {
             content: '\2605';
             front-size:15px;
             color: white;
         }
+        tr:nth-last-of-type(2n+8) td:nth-last-of-type(n+13):after {
+            content: '\2605';
+            front-size:15px;
+            color: white;
+        }
+        tr:nth-last-of-type(2n+8) td:after {
+            position: relative;
+            left: 20px;
+        }
         tr:nth-last-of-type(2n+7) td:after {
             position: relative;
-            left: 14px;
+            left: 6px;
         }
     </style>
 </head>
@@ -47,33 +56,8 @@
             <td> </td>
             <td> </td>
             <td> </td>
-            <td> </td>
-            <td> </td>
         </tr>
         <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td> </td>
-            <td> </td>
             <td> </td>
             <td> </td>
             <td> </td>
@@ -110,33 +94,8 @@
             <td> </td>
             <td> </td>
             <td> </td>
-            <td> </td>
-            <td> </td>
         </tr>
         <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td> </td>
-            <td> </td>
             <td> </td>
             <td> </td>
             <td> </td>
@@ -173,33 +132,8 @@
             <td> </td>
             <td> </td>
             <td> </td>
-            <td> </td>
-            <td> </td>
         </tr>
         <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td> </td>
-            <td> </td>
             <td> </td>
             <td> </td>
             <td> </td>
@@ -236,6 +170,23 @@
             <td> </td>
             <td> </td>
             <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
             <td> </td>
             <td> </td>
         </tr>
@@ -257,6 +208,23 @@
             <td> </td>
             <td> </td>
             <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
             <td> </td>
             <td> </td>
         </tr>
@@ -278,12 +246,27 @@
             <td> </td>
             <td> </td>
             <td> </td>
-            <td> </td>
-            <td> </td>
         </tr>
         <tr>
             <td> </td>
             <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
             <td> </td>
             <td> </td>
             <td> </td>
