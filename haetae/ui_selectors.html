@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI Selectors Demo</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {border: 1px solid black;}
+        tr:nth-child(2n+3) {background: gray; color: white;}
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Role</th>
+            <th>Profession</th>
+        </tr>
+        <tr>
+            <td>Haibo Yan</td>
+            <td><time date="1975-07-24"></time></td>
+            <td>Father</td>
+            <td>Programmer</td>
+        </tr>
+        <tr>
+            <td>Guiying Luo</td>
+            <td><time date="1980-05-06"></time></td>
+            <td>Mother</td>
+            <td>Housewife</td>
+        </tr>
+        <tr>
+            <td>Yanran Yan</td>
+            <td><time date="2001-11-07"></time></td>
+            <td>Daughter</td>
+            <td>High School Student</td>
+        </tr>
+        <tr>
+            <td>Zachary Yan</td>
+            <td><time date="2015-08-30"></time></td>
+            <td>Son</td>
+            <td>Toddler</td>
+        </tr>
+        <tr>
+            <td>Tristan Jr Yan</td>
+            <td><time date="2018-08-10"></time></td>
+            <td>Son</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
