@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectors Demo</title>
+    <style>
+        ol li {color:green;}  /* descendant selector, matches nested <li>s */
+        ol > li {color:purple;} /* child selector, matches <li>s in <ol> but not nested <ul> */
+        li {color: yellow;}
+        li.myclass {color: red;}
+        li.myclass ~ li {color: blue;} /* general sibling selector, matches later siblings, but not nested */
+        li.myclass + li {color:orange;} /* adjacent sibling */
+    </style>
+</head>
+<body>
+    <ol>
+        <li> Operating System </li>
+        <li> Database </li>
+        <li> Language
+            <ul>
+                <li>C++</li> <!-- matches ol li {color:green;} -->
+                <li>Java</li>
+                <li>Python</li>
+                <li>Swift</li>
+            </ul>
+        </li>
+        <li class="myclass"> Compiler </li>
+        <li> Machine Learning </li>
+        <li> Network
+            <ul>
+                <li>TCP/UDP</li>
+                <li>IP</li>
+            </ul>
+        </li>
+        <li> Distributed System</li>
+    </ol>
+</body>
+</html>
