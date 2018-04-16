@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Content Demo</title>
+    <style>
+        a:before {
+            color: #ffffff;
+            background-color: #1e90ff;
+            font-size: 120%;
+            padding: 2px 5px;
+            display: inline-block;
+            width: 1.2em;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        a[href^="mailto:"]:before {
+            content: "\2709";
+        }
+
+        a[href^="tel:"]:before {
+            content: "\2706";
+        }
+
+        a[href$="vcs"]:before {
+            content: "\231A";
+        }
+
+        a[href^="http"]:hover {
+            position: relative;
+        }
+
+        a[href^="http"]:hover:after {
+            content: attr(href);
+            position: absolute;
+            top: 1em;
+            left: 1px;
+            background-color: #1e90ff;
+            color: white;
+            padding: 3px 5px;
+            line-height: 1;
+        }
+    </style>
+</head>
+    <p><a href="mailto:tristan.yim@gmail.com">Haibo Yan</a></p>
+    <p><a href="tel:(925)351-5817">(925)351-5817</a></p>
+    <p><a href="https://github.com/billyean">Haibo Yan's repo</a></p>
+<body>
+
+</body>
+</html>
