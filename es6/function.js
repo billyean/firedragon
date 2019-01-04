@@ -47,3 +47,6 @@ console.log("sum of " + all + " is " + sum);
 let oddPosSum = all.reduce((p,c,i) => p + ((i % 2 == 0) ? 0 : c));
 console.log("sum of " + all + "'s odd position numbers is " + oddPosSum);
 
+let addBase = all.reduce((p,c) => p + c, 10);
+console.log("sum of " + all + " plus 10 is " + addBase);
+
