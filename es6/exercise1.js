@@ -29,11 +29,15 @@
 //console.log(N_PROC);
 
 var callbacks = []
-for (var i = 0; i < 5; i++) {
-  callbacks.push(function() { 
-      const j = i;
-      console.log(j); 
-  });
+for (let i = 0; i < 5; i++) {
+    callbacks.push(function() {
+        const j = i;
+        console.log(j);
+    });
+    // callbacks.push(() => {
+    //     const j = i;
+    //     console.log(j);
+    // });
 }
 
 // test one of the callbacks - it should
