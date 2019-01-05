@@ -16,3 +16,9 @@ callbacks[2]();
 let plus = (a, b) => a + b;
 
 console.log(plus(1, 4));
+
+let numbers = [3,4,5,6];
+
+let evens = numbers.map(x => x % 2 == 0);
+
+console.log(evens);
