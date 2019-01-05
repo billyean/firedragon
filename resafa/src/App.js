@@ -28,6 +28,15 @@ class App extends Component {
           {name: 'Ruby', age: 17, sex: 'Female'},
           {name: 'Tina', age: 38, sex: 'Female'}]
     };
+
+    this.addHaibo = this.addHaibo.bind(this);
+  }
+
+  addHaibo(e, c) {
+    let haibo = {name: 'Haibo', age: 43, sex: 'Male'};
+    this.setState({
+      people: [...this.state.people, haibo]
+    });
   }
 
   render() {
@@ -41,6 +50,7 @@ class App extends Component {
         <sections>
           {people}
         </sections>
+        <button onClick={this.addHaibo}>Add Haibo</button>
         {/*<header className="App-header">*/}
           {/*<img src={logo} className="App-logo" alt="logo" />*/}
           {/*<p>*/}
