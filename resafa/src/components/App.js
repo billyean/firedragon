@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
-import './App.css';
+import '../App.css';
+import Person from './Person';
+import AddPerson from './AddPerson';
 
 // class X extends Component {
 //   render() {
@@ -8,36 +10,32 @@ import './App.css';
 //   }
 // }
 
-class Person extends Component {
-  render() {
-    return (
-      <p>
-        {this.props.person.name} is {this.props.person.age} and {this.props.person.sex === 'Male' ? 'he' : 'she' } is a {this.props.person.sex}
-      </p>
-    );
-  }
-}
+
+
+
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state= {
-      people: [
-          {name: 'Tristan', age: 0, sex: 'Male'},
-          {name: 'Zachary', age: 3, sex: 'Male'},
-          {name: 'Ruby', age: 17, sex: 'Female'},
-          {name: 'Tina', age: 38, sex: 'Female'}]
+        'people' : [
+            {name: 'Tristan', age: 0, sex: 'Male'},
+            {name: 'Zachary', age: 3, sex: 'Male'},
+            {name: 'Ruby', age: 17, sex: 'Female'},
+            {name: 'Tina', age: 38, sex: 'Female'}]
     };
 
-    this.addHaibo = this.addHaibo.bind(this);
+    this.add = this.add.bind(this);
   }
 
-  addHaibo(e, c) {
-    let haibo = {name: 'Haibo', age: 43, sex: 'Male'};
-    this.setState({
-      people: [...this.state.people, haibo]
-    });
+  add(p) {
+      console.log(`add person name ${p.name}`);
+      this.setState({
+          'people' : [...this.state.people, p]
+      })
   }
+
+
 
   render() {
     let people = this.state.people.map(p => {
@@ -50,7 +48,6 @@ class App extends Component {
         <sections>
           {people}
         </sections>
-        <button onClick={this.addHaibo}>Add Haibo</button>
         {/*<header className="App-header">*/}
           {/*<img src={logo} className="App-logo" alt="logo" />*/}
           {/*<p>*/}
@@ -68,6 +65,7 @@ class App extends Component {
           {/*</a> *!/*/}
           {/*<X></X>*/}
         {/*</header>*/}
+        <AddPerson addHandler={this.add}/>
       </div>
     );
   }
