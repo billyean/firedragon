@@ -20,8 +20,9 @@ class App extends Component {
             <div>
                 <header>
                     <nav>
-                        <a href='/people'>People</a>
-                        <a href='/books'>Books</a>
+                        <span><a href='/people'>People</a></span>
+                        <span><a href='/books'>Books</a></span>
+                        <span><a href='/counter'>Counter</a></span>
                         {/*Trying to figure out why below is not working*/}
                         {/*<NavLink to='/people'>People</NavLink>*/}
                         {/*<NavLink to='/books'>Books</NavLink>*/}
