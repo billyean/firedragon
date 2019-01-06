@@ -39,7 +39,7 @@ class AddPerson extends Component {
     handleUpadete(e) {
         console.log(e.target.name);
         let p = this.state.person;
-        switch(e.target.name) {
+        switch (e.target.name) {
             case "name":
                 p.name = e.target.value;
                 break;
@@ -49,6 +49,8 @@ class AddPerson extends Component {
             case "sex":
                 p.sex = e.target.value;
                 break;
+            default:
+                return;
         }
         this.setState({person: p});
     }
@@ -66,9 +68,9 @@ class AddPerson extends Component {
                     </p>
                     <p align ="left">
                         Sex:
-                        <select name="sex" onChange={this.handleUpadete}>
-                            <option value='Male' selected={this.state.person.sex === 'Male'}>Male</option>
-                            <option value='Female'  selected={this.state.person.sex === 'Male'}>Female</option>
+                        <select name="sex" onChange={this.handleUpadete} value={this.state.person.sex}>
+                            <option key={1} value='Male'>Male</option>
+                            <option key={2} value='Female'>Female</option>
                         </select>
                     </p>
                     <p align ="left">
