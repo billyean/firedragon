@@ -4,7 +4,8 @@ import './index.css';
 import App from './components/App';
 import People from './components/People'
 import Counter from './components/Counter'
- import Books from './components/Books'
+import Books from './components/Books'
+import Compute from './components/Compute'
 import {Route, BrowserRouter, Switch} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
@@ -16,6 +17,7 @@ ReactDOM.render((
                 <Route path='/people' component={People}/>
                 <Route path='/books' component={Books}/>
                 <Route path='/counter' component={Counter}/>
+                <Route path='/compute' component={Compute}/>
             </Switch>
         </BrowserRouter>
     </App>), document.getElementById('root'));

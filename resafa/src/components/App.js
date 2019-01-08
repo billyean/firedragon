@@ -9,6 +9,10 @@ import '../App.css';
 //   }
 // }
 
+const style = {
+    width: 20
+};
+
 
 class App extends Component {
     // constructor(props) {
@@ -20,9 +24,10 @@ class App extends Component {
             <div>
                 <header>
                     <nav>
-                        <span><a href='/people'>People</a></span>
-                        <span><a href='/books'>Books</a></span>
-                        <span><a href='/counter'>Counter</a></span>
+                        <span style={style}><a href='/people'>People</a></span>
+                        <span style={style}><a href='/books'>Books</a></span>
+                        <span style={style}><a href='/counter'>Counter</a></span>
+                        <span style={style}><a href='/compute'>Compute</a></span>
                         {/*Trying to figure out why below is not working*/}
                         {/*<NavLink to='/people'>People</NavLink>*/}
                         {/*<NavLink to='/books'>Books</NavLink>*/}
