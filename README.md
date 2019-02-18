@@ -13,3 +13,5 @@ Here is a couple of practice folder I am experiencing with
 
 * [dragon](./dragon) is a react application that can lets user play all kind of online code.
 * [haetae](./haetae) is pure a HTML5 application that I am using it practice all new tags in HTML5 along with css3
+* [resafa](./resafa) is pure a React application that I demo usage of React/Redux/Flux
+* [miye](./miye) is a React Application of frontend part of miye application
