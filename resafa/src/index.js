@@ -8,6 +8,7 @@ import Books from './components/Books'
 import Compute from './components/Compute'
 import {Route, BrowserRouter, Switch} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render((
     <App>

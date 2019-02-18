@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 // import {NavLink} from 'react-router-dom';
 // import {Link} from 'react-router-dom';
 import '../App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // class X extends Component {
 //   render() {
@@ -9,9 +10,11 @@ import '../App.css';
 //   }
 // }
 
-const style = {
-    width: 20
-};
+// const style = {
+//     background: 'blue',
+//     width: '400px',
+//     color: 'red'
+// };
 
 
 class App extends Component {
@@ -23,16 +26,34 @@ class App extends Component {
         return(
             <div>
                 <header>
-                    <nav>
-                        <span style={style}><a href='/people'>People</a></span>
-                        <span style={style}><a href='/books'>Books</a></span>
-                        <span style={style}><a href='/counter'>Counter</a></span>
-                        <span style={style}><a href='/compute'>Compute</a></span>
-                        {/*Trying to figure out why below is not working*/}
-                        {/*<NavLink to='/people'>People</NavLink>*/}
-                        {/*<NavLink to='/books'>Books</NavLink>*/}
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav mr-auto">
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/people">People</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/books">Books</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/counter">Counter</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/compute">Compute</a>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
                 </header>
+                {/*<header>*/}
+                    {/*<nav>*/}
+                        {/*<span style={style}><a href='/people'>People</a></span>*/}
+                        {/*<span style={style}><a href='/books'>Books</a></span>*/}
+                        {/*<span style={style}><a href='/counter'>Counter</a></span>*/}
+                        {/*<span style={style}><a href='/compute'>Compute</a></span>*/}
+
+                    {/*</nav>*/}
+                {/*</header>*/}
                 {this.props.children}
             </div>
         );
