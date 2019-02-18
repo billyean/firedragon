@@ -4,8 +4,8 @@ import EventEmitter from 'events';
 
 var _count = 0;
 
-function incrementCount(i) {
-    _count = _count + i;
+function incrementCount(step) {
+    _count = _count + step;
 }
 
 function getCount() {

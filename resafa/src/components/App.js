@@ -23,6 +23,8 @@ class App extends Component {
     // }
 
     render() {
+        let Component = this.props.children
+        // let StoreCompoent = (<Component store={store} />)
         return(
             <div>
                 <header>
@@ -41,6 +43,9 @@ class App extends Component {
                                 <li className="nav-item">
                                     <a className="nav-link" href="/compute">Compute</a>
                                 </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/reduxcounter">Redux Counter</a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -54,7 +59,7 @@ class App extends Component {
 
                     {/*</nav>*/}
                 {/*</header>*/}
-                {this.props.children}
+                { Component }
             </div>
         );
     }
