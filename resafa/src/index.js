@@ -11,6 +11,11 @@ import {Route, BrowserRouter, Switch} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 
+ // let StoreReduxCounter = (component) => {
+ //     return (<component store={store})
+ // }
+
+
 ReactDOM.render((
     <App>
         <BrowserRouter>

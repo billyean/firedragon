@@ -16,6 +16,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 //     color: 'red'
 // };
 
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import reducer from '../reducers/counter-reducer'
+
+let store = createStore(reducer)
 
 class App extends Component {
     // constructor(props) {
@@ -23,8 +28,6 @@ class App extends Component {
     // }
 
     render() {
-        let Component = this.props.children
-        // let StoreCompoent = (<Component store={store} />)
         return(
             <div>
                 <header>
@@ -59,7 +62,9 @@ class App extends Component {
 
                     {/*</nav>*/}
                 {/*</header>*/}
-                { Component }
+                <Provider store={store}>
+                    { this.props.children }
+                </Provider>
             </div>
         );
     }

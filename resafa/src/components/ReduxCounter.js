@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import {incrementCount} from '../actions/redux-counter-actions'
 
-import {createStore} from 'redux'
-import reducer from '../reducers/counter-reducer'
-
 export default class ReduxCounter extends Component {
     constructor(props) {
         super(props)
-        this.store = createStore(reducer)
+        this.props = props
+        console.log(props)
         this.state = {
-            count: this.store.getState()
+            count: this.props.store.getState()
         }
         this.increment = this.increment.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -17,18 +15,18 @@ export default class ReduxCounter extends Component {
 
     increment() {
         let action = incrementCount()
-        this.store.dispatch(action)
+        this.props.store.dispatch(action)
     }
 
     handleChange() {
-        console.log('calling handleChange ' + this.store.getState())
+        console.log('calling handleChange ' + this.props.store.getState())
         this.setState({
-            count: this.store.getState()
+            count: this.props.store.getState()
         })
     }
 
     componentDidMount() {
-        this.store.subscribe(this.handleChange)
+        this.props.store.subscribe(this.handleChange)
     }
 
     render() {
