@@ -3,35 +3,24 @@ import React, {Component} from 'react';
 class CustomerDetail extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            id: props.id,
-            first_name: props.first_name,
-            last_name: props.last_name,
-            gender: props.gender,
-            email: props.email,
-            tel: props.tel
-        }
-        this.deleteCustomer = props.deleteCustomer
-        this.updateCustomer = props.updateCustomer
-
         this.onDelete = this.onDelete.bind(this)
         this.onUpdate = this.onUpdate.bind(this)
     }
 
     onDelete() {
-        this.deleteCustomer(this.state.id)  ;
+        this.props.deleteHandler(this.props.customer.id)  ;
     }
 
     onUpdate() {
-        this.updateCustomer(this.state.id)  ;
+        this.props.updateHandler(this.props.customer)  ;
     }
 
     render() {
         return (<tr>
-                <td>this.state.first_name this.state.last_name</td>
-                <td>this.state.gender</td>
-                <td>this.state.tel</td>
-                <td>this.state.email</td>
+                <td>{this.props.customer.first_name} {this.props.customer.last_name}</td>
+                <td>{this.props.customer.gender}</td>
+                <td>{this.props.customer.email}</td>
+                <td>{this.props.customer.tel}</td>
                 <td><button onClick={this.onDelete}>Delete</button><button onClick={this.onUpdate}>Update</button></td>
             </tr>
         )
