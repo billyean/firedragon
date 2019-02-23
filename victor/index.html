@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>victor</title>
+  </head>
+  <body>
+  <div id="app">
+    <h1 v-once>{{msg}}</h1>
+    <p><a v-bind:href="link">{{sayMyName("Tristan")}}</a></p>
+    <p v-html="jsCommand"></p>
+    <button v-on:click="changeMe">Change Me</button>
+    <p v-on:mousemove="updatePos">
+      {{xp}} / {{yp}} <span v-on:mousemove.stop="">        No change over        </span>
+    </p>
+    <input type="text" v-on:keyup.enter="alertMe">
+  </div>
+  </body>
+</html>
