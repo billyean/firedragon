@@ -15,7 +15,10 @@ new Vue({
     link: 'http://github.com/billyean',
     jsCommand: '<h3>Thanks god</h3>',
     xp: 0,
-    yp: 0
+    yp: 0,
+    adder1: 0,
+    adder2: 0,
+    result: 0
   },
   methods: {
     sayMyName: function () {
@@ -30,6 +33,11 @@ new Vue({
     },
     alertMe: function () {
       alert('Done')
+    },
+    changeAdder: function () {
+      console.log(this.adder1)
+      console.log(this.adder2)
+      this.result = parseInt(this.adder1) + parseInt(this.adder2)
     }
   }
   // router,
