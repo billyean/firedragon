@@ -20,7 +20,8 @@ new Vue({
     adder2: 0,
     multiplier1: 0,
     multiplier2: 0,
-    mresult: 0
+    mresult: 0,
+    showred: false
   },
   computed: {
     result: function () {
@@ -34,6 +35,10 @@ new Vue({
 
     multiplier2: function (value) {
       this.mresult = this.multiplier1 * value
+    },
+
+    showred: function (value) {
+      console.log(value)
     }
   },
   methods: {
