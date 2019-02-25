@@ -17,8 +17,12 @@ new Vue({
     xp: 0,
     yp: 0,
     adder1: 0,
-    adder2: 0,
-    result: 0
+    adder2: 0
+  },
+  computed: {
+    result: function () {
+      return parseInt(this.adder1) + parseInt(this.adder2)
+    }
   },
   methods: {
     sayMyName: function () {
@@ -33,11 +37,6 @@ new Vue({
     },
     alertMe: function () {
       alert('Done')
-    },
-    changeAdder: function () {
-      console.log(this.adder1)
-      console.log(this.adder2)
-      this.result = parseInt(this.adder1) + parseInt(this.adder2)
     }
   }
   // router,
