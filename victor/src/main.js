@@ -11,6 +11,7 @@ new Vue({
   el: '#app',
   data: {
     msg: 'My name is Haibo Yan',
+    tel: '',
     link: 'http://github.com/billyean',
     jsCommand: '<h3>Thanks god</h3>',
     xp: 0,

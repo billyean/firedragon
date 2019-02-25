@@ -8,6 +8,7 @@
   <body>
   <div id="app">
     <h1 v-once>{{msg}}</h1>
+    <h2 v-bind="tel">Tel: {{tel}}</h2>
     <p><a v-bind:href="link">{{sayMyName("Tristan")}}</a></p>
     <p v-html="jsCommand"></p>
     <button v-on:click="changeMe">Change Me</button>
@@ -15,6 +16,7 @@
       {{xp}} / {{yp}} <span v-on:mousemove.stop="">        No change over        </span>
     </p>
     <input type="text" v-on:keyup.enter="alertMe">
+    <input type="text" v-model="tel">
   </div>
   </body>
 </html>
