@@ -17,11 +17,23 @@ new Vue({
     xp: 0,
     yp: 0,
     adder1: 0,
-    adder2: 0
+    adder2: 0,
+    multiplier1: 0,
+    multiplier2: 0,
+    mresult: 0
   },
   computed: {
     result: function () {
       return parseInt(this.adder1) + parseInt(this.adder2)
+    }
+  },
+  watch: {
+    multiplier1: function (value) {
+      this.mresult = this.multiplier2 * value
+    },
+
+    multiplier2: function (value) {
+      this.mresult = this.multiplier1 * value
     }
   },
   methods: {
