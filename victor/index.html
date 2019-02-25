@@ -21,9 +21,9 @@
     <p><input type="number" v-model="adder1"> + <input type="number" v-model="adder2"> = {{result}}</p>
     <p><input type="number" v-model="multiplier1"> * <input type="number" v-model="multiplier2"> = {{mresult}}</p>
 
-    <div @click="showred = !showred" :class="{red: showred}">xxx</div>
-    <div class="class2" :style="{'background-color': 'green'}">yyy</div>
-    <div class="class3" :style="{backgroundColor: 'blue'}">zzz</div>
+    <div class="block" @click="showred = !showred" :class="{red: showred}"></div>
+    <div class="block" :style="{'background-color': 'green'}"></div>
+    <div class="block" :style="{backgroundColor: 'blue'}"></div>
   </div>
   </body>
 </html>
