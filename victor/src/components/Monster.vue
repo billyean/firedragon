@@ -61,17 +61,24 @@ export default {
         return
       }
 
-      this.playerHealth -= this.calculateDamage(3, 10)
-      this.checkWin()
+      this.monsterAttack()
     },
     specialAttack: function () {
-
+      this.monsterHealth -= this.calculateDamage(10, 20)
+      if (this.checkWin()) {
+        return
+      }
+      this.monsterAttack()
     },
     heal: function () {
-
+      
     },
     giveUp: function () {
 
+    },
+    monsterAttack: function() {
+      this.playerHealth -= this.calculateDamage(4, 12)
+      this.checkWin()
     },
     calculateDamage: function (min, max) {
       return Math.max(min, Math.floor(Math.random() * max) + 1)
