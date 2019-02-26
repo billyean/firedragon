@@ -3,6 +3,20 @@
     <ul>
       <li v-for="(person, index) in people" v-bind:key="index">{{person}}</li>
     </ul>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Time</th>
+      </thead>
+      <tbody>
+        <template v-for="(task, index) in tasks">
+          <tr v-bind:key="index">
+            <td>{{task.name}}</td>
+            <td>{{task.time}}</td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
   </div>
 </template>
 
