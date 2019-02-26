@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p>{{sigh}}</p>
+    <ul>
+      <li v-for="(person, index) in people" v-bind:key="index">{{person}}</li>
+    </ul>
   </div>
 </template>
 
@@ -9,7 +11,12 @@ export default {
   name: 'Component2',
   data () {
     return {
-      sigh: 'I am tired'
+      people: ['Haibo', 'Zachary', 'Tristan', 'Tina'],
+      tasks: [
+        {name: 'sweeping', time: 30, color: 'red'},
+        {name: 'mowing', time: 40, color: 'green'},
+        {name: 'cooking', time: 60, color: 'blue'}
+      ]
     }
   }
 }
@@ -18,3 +25,4 @@ export default {
 <style scoped>
 
 </style>
+mow
