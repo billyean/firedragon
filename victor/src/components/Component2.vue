@@ -3,6 +3,7 @@
     <ul>
       <li v-for="(person, index) in people" v-bind:key="index">{{person}}</li>
     </ul>
+    <input type="text" v-model="newPerson"><button @click="add">Add one more person</button>
     <table>
       <thead>
         <th>Name</th>
@@ -29,7 +30,14 @@ export default {
         {name: 'sweeping', time: 30, color: 'red'},
         {name: 'mowing', time: 40, color: 'green'},
         {name: 'cooking', time: 60, color: 'blue'}
-      ]
+      ],
+      newPerson: ''
+    }
+  },
+  methods: {
+    add: function () {
+      this.people.push(this.newPerson)
+      this.newPerson = ''
     }
   }
 }
