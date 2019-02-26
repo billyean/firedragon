@@ -11,7 +11,7 @@
       <tbody>
         <template v-for="(task, index) in tasks">
           <tr v-bind:key="index">
-            <td v-for="(value, i) in task" v-bind:key="i">{{value}}</td>
+            <td v-for="(value, key, i) in task" v-bind:key="i">{{value}}</td>
           </tr>
         </template>
       </tbody>
