@@ -11,8 +11,7 @@
       <tbody>
         <template v-for="(task, index) in tasks">
           <tr v-bind:key="index">
-            <td>{{task.name}}</td>
-            <td>{{task.time}}</td>
+            <td v-for="(value, i) in task" v-bind:key="i">{{value}}</td>
           </tr>
         </template>
       </tbody>
