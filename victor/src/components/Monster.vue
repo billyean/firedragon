@@ -71,10 +71,11 @@ export default {
       this.monsterAttack()
     },
     heal: function () {
-      
+      this.playerHealth = Math.min(100, this.playerHealth + 10)
+      this.monsterAttack()
     },
     giveUp: function () {
-
+      this.gameIsRunning = false
     },
     monsterAttack: function() {
       this.playerHealth -= this.calculateDamage(4, 12)
