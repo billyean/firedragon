@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <nav>
+      <ul>
+        <li><router-link to="/binding">Go to Binding</router-link></li>
+        <li><router-link to="/component2">Go to Component2</router-link></li>
+      </ul>
+    </nav>
     <router-view/>
   </div>
 </template>
