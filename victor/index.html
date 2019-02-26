@@ -24,6 +24,17 @@
     <div class="block" @click="showred = !showred" :class="{red: showred}"></div>
     <div class="block" :style="{'background-color': 'green'}"></div>
     <div class="block" :style="{backgroundColor: 'blue'}"></div>
+
+    <template v-if="show">
+      <p><span>First name</span><input type="text" v-model="fname"></p>
+      <p><span>Last name</span><input type="text" v-model="lname"></p>
+      <p><span>Last name</span><select v-model="gender">
+        <option>Female</option><option>Male</option>
+      </select>
+      </p>
+      <p><button @click="submit">Submit</button></p>
+    </template>
+    <p><button @click="show = !show">{{cancelTitle}}</button></p>
   </div>
   </body>
 </html>

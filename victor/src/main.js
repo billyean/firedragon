@@ -21,11 +21,18 @@ new Vue({
     multiplier1: 0,
     multiplier2: 0,
     mresult: 0,
-    showred: false
+    showred: false,
+    show: false,
+    fname: '',
+    lname: '',
+    gender: 'Female'
   },
   computed: {
     result: function () {
       return parseInt(this.adder1) + parseInt(this.adder2)
+    },
+    cancelTitle: function () {
+      return this.show ? 'Cancel' : 'Show'
     }
   },
   watch: {
@@ -54,6 +61,12 @@ new Vue({
     },
     alertMe: function () {
       alert('Done')
+    },
+    submit: function () {
+      console.log(this.fname)
+      console.log(this.lname)
+      console.log(this.gender)
+      alert(`${this.fname} ${this.lname} is ${this.gender}`)
     }
   }
   // router,
