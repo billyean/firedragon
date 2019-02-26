@@ -30,7 +30,7 @@
     <section class="row log" v-if="turns.length > 0">
       <div class="small-12 columns">
         <ul>
-          <li v-for="(turn, index) in turns" :key="index">
+          <li v-for="(turn, index) in turns" :key="index" :class="{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}">
             {{turn.text}}
           </li>
         </ul>
@@ -55,13 +55,14 @@ export default {
       this.playerHealth = 100
       this.monsterHealth = 100
       this.gameIsRunning = true
+      this.turns = []
     },
     attack: function () {
       let damage = this.calculateDamage(3, 10)
       this.monsterHealth -= damage
       this.turns.unshift({
         isPlayer: true,
-        text: `Player hits Monster for ${damage}`
+        text: `Player hits Monster for ${damage} points`
       })
       if (this.checkWin()) {
         return
@@ -74,7 +75,7 @@ export default {
       this.monsterHealth -= damage
       this.turns.unshift({
         isPlayer: true,
-        text: `Player hits Monster for ${damage}`
+        text: `Player hits Monster for ${damage} points`
       })
       if (this.checkWin()) {
         return
@@ -82,7 +83,12 @@ export default {
       this.monsterAttack()
     },
     heal: function () {
-      this.playerHealth = Math.min(100, this.playerHealth + 10)
+      let heal = Math.min(10, 100 - this.playerHealth)
+      this.turns.unshift({
+        isPlayer: true,
+        text: `Player gets back ${heal} points`
+      })
+      this.playerHealth += heal
       this.monsterAttack()
     },
     giveUp: function () {
@@ -92,7 +98,7 @@ export default {
       let damage = this.calculateDamage(4, 12)
       this.turns.unshift({
         isPlayer: false,
-        text: `Monster hits Player for ${damage}`
+        text: `Monster hits Player for ${damage} points`
       })
       this.playerHealth -= damage
       this.checkWin()
