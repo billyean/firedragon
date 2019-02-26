@@ -46,4 +46,3 @@ export default {
 <style scoped>
 
 </style>
-mow

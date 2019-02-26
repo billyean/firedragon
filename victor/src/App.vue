@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <nav>
-      <ul>
-        <li><router-link to="/binding">Go to Binding</router-link></li>
-        <li><router-link to="/component2">Go to Component2</router-link></li>
-      </ul>
+      <span class="span"><router-link to="/binding">Go to Binding</router-link></span>
+      <span class="span"><router-link to="/component2">Go to Component2</router-link></span>
+      <span class="span"><router-link to="/monster">Go to Monster</router-link></span>
     </nav>
     <router-view/>
   </div>
@@ -21,8 +20,12 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.span {
+  width: 100px;
 }
 </style>

@@ -1,7 +1,3 @@
-<style>
-  @import '../assets/style/binding.css';
-</style>
-
 <template>
   <div>
     <h1 v-once>{{msg}}</h1>
@@ -113,5 +109,5 @@ export default {
 </script>
 
 <style scoped>
-
+  @import '../assets/style/binding.css';
 </style>
