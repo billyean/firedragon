@@ -7,10 +7,12 @@
         img[alt] { width: 10%; height: 10%;} /*[] means if there is attribute of type */
         form input[type="date"] {background: red;} /* [=] matches the attribute name*/
         ul li[class|="classA"] {color: orange;} /* [!=] matches the attribute starts with name along with -*/
+        ul li[title~="woo"] {color: deeppink;} /* [~] matches the attribute has within its value the space-separated full word val(woo)*/
     </style>
 </head>
 <body>
-    <img id="img_haibo" src="haibo.jpg" alt="accessible"/>
+    <img id="img_haibo1" src="haibo.jpg" alt="accessible"/>
+    <img id="img_haibo2" src="haibo.jpg" title="inaccessible"/>
     <form>
         <p><input type="date"/></p>
         <p><input type="text"/></p>
@@ -19,7 +21,9 @@
     <ul>
         <li class="classA">Say cheese</li>
         <li class="classAB">茄子</li>
-        <li class="classA-B">Woo</li>
+        <li class="classA-B">丝瓜</li>
+        <li title="This is woo...">Woo disabled</li>
+        <li title="This is woo ...">Woo enabled</li>
     </ul>
 </body>
 </html>
