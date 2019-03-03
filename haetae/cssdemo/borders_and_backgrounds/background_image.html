@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+          background-color, background-image, background-repeat, background-attachment, background-position
+
+          background-image : noe | <url> | <image-list>(comma separated) | <element-reference> | <gradient>
+
+          url(singleImage.png)
+          url(multipleImages.gif), url(otherGif.gif)
+          none
+          linear-gradient(top, red, blue)
+          radical-gradient(circle, red, blue)
+          url(data:image/gif;base64,fOulrS123hEAAa517sdf...)
+          url("data:image/svg+xml;utf8,<svg xmlns='http'".)
+          element("#someID")
+          image('ico_sprite.jpg#xywh=32,64,16,16')
+          image("try1.svg", "try2.png", "try3.gif")
+        */
+        .div1 {
+            position: relative;
+            display: inline-block;
+            background-image: image('./central.jpg');
+            margin: 10px;
+            padding: 10px;
+        }
+        .div2 {
+            position: relative;
+            display: inline-block;
+            background-image: url('./central.jpg#xywh=40,40,160,160');
+            margin: 10px;
+            padding: 10px;
+            width: 320px; height: 320px;
+        }
+        .div3 {
+            position: relative;
+            float: right;
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: red;
+            width: 80px; height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label style="margin: 10px;">Image1</label><div class="div1"></div>
+    </div>
+    <div>
+        <label style="float: left; margin: 10px;">Image2</label><div class="div2"></div>
+    </div>
+    <div>
+        <label style="float: left; margin: 10px;">Image3: </label><div class="div3"></div>
+    </div>
+</body>
+</html>
