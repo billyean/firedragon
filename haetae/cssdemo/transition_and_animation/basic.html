@@ -13,8 +13,19 @@
 
         code:hover {
             color: red;
-            font-size: 120%;
+            transform: scale(2, 2);
+            transform-origin: 0 0;
+            /*font-size: 120%;*/
             background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .sword {
+            transition: all 3s ease-in 50ms;
+            transform-origin: 100px 123px;
+        }
+
+        .sword:hover {
+            transform: rotate(1080deg) scale(1.4);
         }
     </style>
 </head>
@@ -24,5 +35,11 @@
             def test():
                 pass
     </code>
+
+    <div style="position: relative; top: 100px; left:200px;">
+        <image class="sword" src="sword.jpg"></image>
+    </div>
+
+
 </body>
 </html>
