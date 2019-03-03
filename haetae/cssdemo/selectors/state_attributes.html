@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* pesudo class for state
+            :valid, :invalid, :required, :optional, :in-range, :out-of-range, :read-only, :read-write, :default
+        */
+        input[type=checkbox]:checked + label {
+            color: red;
+        }
+
+        input[type=number]:invalid {
+            background-color: #000099;
+            color: white;
+            border-color: red;
+        }
+
+        input[type=text]:required {
+            border-width: 5px;
+        }
+
+        input[type=text]:optional {
+            border-width: 10px;
+        }
+
+        input[type=number]:in-range {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <p><input type="checkbox" checked><label>Red</label></p>
+    <p><input type="checkbox"><label>Black</label></p>
+
+    <p><label>Number:</label><input type="number" min="0" max="100"></p>
+    <p><label>Required:</label><input type="text" optional></p>
+    <p><label>Optional:</label><input type="text" optional></p>
+
+    <p><label>In Range</label><input type="number" min="0" max="3"></p>
+</body>
+</html>
