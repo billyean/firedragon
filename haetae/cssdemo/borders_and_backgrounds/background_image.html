@@ -37,13 +37,31 @@
         }
         .div3 {
             position: relative;
-            float: right;
             display: inline-block;
             margin: 10px;
             padding: 10px;
             background-color: red;
             width: 80px; height: 80px;
         }
+
+        #divWrapper {
+            width: 30%;
+            float: left;
+        }
+        .div4 {
+            /*position: relative;*/
+            /*top: 0px;*/
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: red;
+            width: 80px; height: 80px;
+        }
+
+
+        /*.div4-left::before {*/
+            /*content: '\D'*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -55,6 +73,12 @@
     </div>
     <div>
         <label style="float: left; margin: 10px;">Image3: </label><div class="div3"></div>
+    </div>
+
+
+    <div id="divWrapper">
+        <div class="div4"></div><div class="div4"></div><div class="div4"></div><div class="div4"></div><div class="div4"></div>
+        <div class="div4"></div><div class="div4"></div><div class="div4"></div><div class="div4"></div><div class="div4"></div>
     </div>
 </body>
 </html>
