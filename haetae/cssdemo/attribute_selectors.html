@@ -8,6 +8,9 @@
         form input[type="date"] {background: red;} /* [=] matches the attribute name*/
         ul li[class|="classA"] {color: orange;} /* [!=] matches the attribute starts with name along with -*/
         ul li[title~="woo"] {color: deeppink;} /* [~] matches the attribute has within its value the space-separated full word val(woo)*/
+        ul li[title^="green"] {color: green;} /* [^] matches the attribute title starts with val(green)*/
+        ul li[title$="blue"] {color: blue;} /* [^] matches the attribute title ends with val(blue)*/
+        ul li[title*="wooo"] {color: yellow;} /* [^] matches the attribute contains with wooo, similar to ~, except the val can be part of word*/
     </style>
 </head>
 <body>
@@ -22,8 +25,11 @@
         <li class="classA">Say cheese</li>
         <li class="classAB">茄子</li>
         <li class="classA-B">丝瓜</li>
-        <li title="This is woo...">Woo disabled</li>
-        <li title="This is woo ...">Woo enabled</li>
+        <li title="This is woo...">This is woo...</li>
+        <li title="This is woo ...">This is woo ...</li>
+        <li title="green title">green title</li>
+        <li title="title blue">title blue</li>
+        <li title="This is wooo...">This is wooo...</li>
     </ul>
 </body>
 </html>
