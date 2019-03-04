@@ -25,7 +25,35 @@
         }
 
         .sword:hover {
-            transform: rotate(1080deg) scale(1.4);
+            transform: rotate(2160deg) scale(1.4);
+        }
+
+        .hongbao {
+            width: 200px; height: 200px;
+            transition: all 3s ease-in 50ms;
+            transform-origin: 100px 123px;
+        }
+
+        .hongbao:hover {
+            transform: scale(0.25);
+        }
+
+        .money {
+            width: 240px; height: 240px;
+            transition: all 2s ease-in 50ms;
+        }
+
+        .money:hover {
+            transform: translate(0px, 100px);
+        }
+
+        .money1 {
+            width: 240px; height: 240px;
+            transition: all 2s ease-in 50ms;
+        }
+
+        .money1:hover {
+            transform: translate(100px, 0px);
         }
     </style>
 </head>
@@ -36,8 +64,16 @@
                 pass
     </code>
 
-    <div style="position: relative; top: 100px; left:200px;">
+    <div style="position: relative; top: 60px; left:20px; display: inline;">
         <image class="sword" src="sword.jpg"></image>
+    </div>
+
+    <div style="position: relative; top: 60px; left:20px; display: inline;">
+        <image class="hongbao" src="hongbao.jpg"></image>
+    </div>
+
+    <div style="position: relative; top: 40px; left:200px; display: block;">
+        <image class="money money1" src="money.jpg"></image>
     </div>
 
 
