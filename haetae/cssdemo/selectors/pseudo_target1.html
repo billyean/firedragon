@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+         pseudo class:
+         :lang, :target
+         :link :visited - security reason, not support well
+         :hover :active :focus - support all
+        */
+
+        .block {
+            width: 800px;
+            min-height: 400px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        section { display: inline; }
+
+        section > a {
+            text-decoration: none;
+            color: black;
+            float: left;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-bottom-color: #fff;
+            margin-right: 10px;
+            position: relative;
+            top: 2px
+        }
+
+        section > div {
+            position: absolute;
+            background: #eee;
+            z-index: -2;
+            left: 0;
+            top: 30px;
+            bottom: 0;
+            right: 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        section:target > div {
+            z-index: -1;
+        }
+
+        section:not(:target) > a {
+            border-bottom: 0;
+            background-color: #eee;
+        }
+
+        section:target > a {
+            background-color: white;
+        }
+    </style>
+</head>
+    <article class="block">
+        <section id="haibo">
+            <a href="#haibo">Haibo</a>
+            <div>
+                Haibo is a happy father
+            </div>
+        </section>
+
+        <section id="zachary">
+            <a href="#zachary">Zachary</a>
+            <div>
+                Zachary is a naughty boy
+            </div>
+        </section>
+
+        <section id="tristan">
+            <a href="#tristan">Tristan</a>
+            <div>
+                Tristan is a happy baby
+            </div>
+        </section>
+    </article>
+<body>
+
+
+</body>
+</html>
