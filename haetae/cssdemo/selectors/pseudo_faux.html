@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faux</title>
+    <style>
+        /*
+         pseudo element: (use single colon notation because microsoft)
+         :first-line ::first-letter
+         :selection (not in specification)
+         :before
+         :after
+        */
+
+        div {
+            text-align: center;
+            width: 400px;
+            min-height: 400px;
+            position: relative;
+            top:50px;
+            margin: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            font-family: "Apple Braille";
+        }
+
+        p:first-of-type::first-letter {
+            position: relative;
+            top: 8px;
+            float: left;
+            font-size: 3em;
+            line-height: 1;
+            color: #990000;
+            padding: 2px 4px 2px 2px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>
+        Haibo Yan has more than twenty years of experience in various area including but not limited to, Client/Server, Networking, and Manufacture. He has abundant experience in software engineering and software development, have solid knowledge on various programming languages include C/C++, Java, Scala, Python, Javascript, Go, Rust, Cobol, PL/SQL, Unix Shell, Swift. He has tons of experiences at designing and implementation on high-scalability, high performance, low latency web based application and distributed computing system. He also is a big data and cloud computing expert, he's spent years working on different big data tools.
+    </p>
+    <p>
+        Haibo is an extreme enthusiast and he has great passive on new technology, he is a quicker learner at all kind of new technologies and innovator in software development area.
+    </p>
+</div>
+
+</body>
+</html>

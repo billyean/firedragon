@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Demo of target changed</title>
     <style>
         /*
          pseudo class:
@@ -15,6 +15,7 @@
             width: 800px;
             min-height: 400px;
             position: relative;
+            top:50px;
             margin: 20px auto;
         }
 
@@ -22,6 +23,8 @@
 
         section > a {
             text-decoration: none;
+            font-family: monospace;
+            font-size: 1.2em;
             color: black;
             float: left;
             padding: 5px 10px;
@@ -35,7 +38,7 @@
         section > div {
             position: absolute;
             background: #eee;
-            z-index: -2;
+            z-index: 0;
             left: 0;
             top: 30px;
             bottom: 0;
@@ -45,7 +48,7 @@
         }
 
         section:target > div {
-            z-index: -1;
+            z-index: 1;
         }
 
         section:not(:target) > a {
@@ -58,6 +61,7 @@
         }
     </style>
 </head>
+    <h1 style="text-align: center;">Target selection</h1>
     <article class="block">
         <section id="haibo">
             <a href="#haibo">Haibo</a>
