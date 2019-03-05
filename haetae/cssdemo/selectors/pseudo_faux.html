@@ -24,6 +24,7 @@
         p {
             font-size: 1.2em;
             font-family: "Apple Braille";
+            transition: all 3s ease-in 50ms;
         }
 
         p:first-of-type::first-letter {
@@ -35,6 +36,10 @@
             color: #990000;
             padding: 2px 4px 2px 2px;
             font-weight: bold;
+        }
+
+        p::selection {
+            transform: scale(3);
         }
     </style>
 </head>
