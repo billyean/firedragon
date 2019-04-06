@@ -46,17 +46,17 @@ let v1 = new Vue({
 
 var first = true
 
-let outer_toggle = function() {
+let outerToggle = function () {
   if (first) {
     v1.toggle1()
   } else {
     v2.toggle2()
   }
   first = !first
-  setTimeout(outer_toggle, 5000)
+  setTimeout(outerToggle, 20000)
 }
 
-setTimeout(outer_toggle, 5000)
+setTimeout(outerToggle, 20000)
 
 let v2 = new Vue({
   el: '#app2',
