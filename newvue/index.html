@@ -8,13 +8,15 @@
   <body>
     <div id="app1">
       <h1>{{ title }}</h1>
-      <button v-on:click="show">Show Paragraph</button>
+      <button v-on:click="toggle1">Toggle Paragraph</button>
+      <button v-on:click="toggle2">Toggle Info for second vue</button>
       <p v-if="showParagraph">This is not always visible.</p>
     </div>
 
     <div id="app2">
       <h1>{{ title }}</h1>
-      <button v-on:click="show">Show Info</button>
+      <button v-on:click="toggle2">Toggle Info</button>
+      <button v-on:click="toggle1">Toggle Paragraph for first vue</button>
       <p v-if="showParagraph">This is not always visible.</p>
     </div>
     <!-- built files will be auto injected -->

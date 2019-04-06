@@ -5,16 +5,28 @@ import Vue from 'vue'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+let v1 = new Vue({
   el: '#app1',
   data: {
-    title: 'The first VueJS instance',
+    title: 'The first VueJS instance. ',
     showParagraph: false
   },
   methods: {
-    show: function () {
-      this.showParagraph = true
-      this.updateTitle('The first VueJS instance. (Updated)')
+    toggle1: function () {
+      this.showParagraph = !this.showParagraph
+      if (this.showParagraph) {
+        this.updateTitle('The first VueJS instance. (Shown)')
+      } else {
+        this.updateTitle('The first VueJS instance. ')
+      }
+    },
+    toggle2: function () {
+      v2.showInfo = !v2.showInfo
+      if (v2.showInfo) {
+        v2.updateTitle('The second VueJS instance. (Shown)')
+      } else {
+        v2.updateTitle('The second VueJS instance. ')
+      }
     },
     updateTitle: function (title) {
       this.title = title
@@ -32,16 +44,28 @@ new Vue({
   }
 })
 
-new Vue({
+let v2 = new Vue({
   el: '#app2',
   data: {
-    title: 'The second VueJS instance',
+    title: 'The second VueJS instance. ',
     showInfo: false
   },
   methods: {
-    show: function () {
-      this.showInfo = true
-      this.updateTitle('The second VueJS instance. (Updated)')
+    toggle2: function () {
+      this.showInfo = !this.showInfo
+      if (this.showInfo) {
+        this.updateTitle('The second VueJS instance. (Shown)')
+      } else {
+        this.updateTitle('The second VueJS instance. ')
+      }
+    },
+    toggle1: function () {
+      v1.showParagraph = !v1.showParagraph
+      if (v1.showParagraph) {
+        v1.updateTitle('The first VueJS instance. (Shown)')
+      } else {
+        v1.updateTitle('The first VueJS instance. ')
+      }
     },
     updateTitle: function (title) {
       this.title = title
