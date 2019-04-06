@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Binding from '@/components/Binding'
 import Component2 from '@/components/Component2'
 import Monster from '@/components/Monster'
-import {Vue1, Vue2} from '@/components/MultipleVue'
+// import {Vue1, Vue2} from '@/components/MultipleVue'
 
 Vue.use(Router)
 
@@ -28,16 +28,16 @@ export default new Router({
       path: '/monster',
       name: 'Monster',
       component: Monster
-    },
-    {
-      path: '/vue1',
-      name: 'Vue1',
-      component: Vue1
-    },
-    {
-      path: '/vue2',
-      name: 'Vue2',
-      component: Vue2
     }
+    //     , {
+    //   path: '/vue1',
+    //   name: 'Vue1',
+    //   component: Vue1
+    // },
+    // {
+    //   path: '/vue2',
+    //   name: 'Vue2',
+    //   component: Vue2
+    // }
   ]
 })
