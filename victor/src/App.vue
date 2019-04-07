@@ -20,6 +20,14 @@
               <router-link class="nav-link" to="/monster">Go to Monster</router-link>
             </div>
           </li>
+          <li class="nav-item dropdown" style="padding-right: 20px">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Components Demo
+            </a>
+            <div class="dropdown-menu navbar-dark bg-dark" aria-labelledby="navbarDropdown3">
+              <router-link class="nav-link" to="/calculator">Embedded</router-link>
+            </div>
+          </li>
           <!--<li class="nav-item dropdown">-->
           <!--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
           <!--Vue1 & Vue2-->

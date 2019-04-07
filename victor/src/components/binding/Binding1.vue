@@ -109,5 +109,5 @@ export default {
 </script>
 
 <style scoped>
-  @import '../assets/style/binding.css';
+  @import '../../assets/style/binding.css';
 </style>

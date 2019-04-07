@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Binding1 from '@/components/Binding1'
-import Binding2 from '@/components/Binding2'
+import Binding1 from '@/components/binding/Binding1'
+import Binding2 from '@/components/binding/Binding2'
 import Monster from '@/components/Monster'
-// import {Vue1, Vue2} from '@/components/MultipleVue'
+import CalculatorContainer from '@/components/compByComp/CalculatorContainer'
 
 Vue.use(Router)
 
@@ -28,6 +28,11 @@ export default new Router({
       path: '/monster',
       name: 'Monster',
       component: Monster
+    },
+    {
+      path: '/calculator',
+      name: 'CalculatorContainer',
+      component: CalculatorContainer
     }
     //     , {
     //   path: '/vue1',
