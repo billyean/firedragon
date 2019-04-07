@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="height: auto">
   <table class="table table-sm table-striped table-hover">
     <thead class="thead-dark">
       <th class="text-left">Name</th>
