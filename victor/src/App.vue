@@ -26,6 +26,7 @@
             </a>
             <div class="dropdown-menu navbar-dark bg-dark" aria-labelledby="navbarDropdown3">
               <router-link class="nav-link" to="/calculator">Embedded</router-link>
+              <router-link class="nav-link" to="/service">Master Detail</router-link>
             </div>
           </li>
           <!--<li class="nav-item dropdown">-->

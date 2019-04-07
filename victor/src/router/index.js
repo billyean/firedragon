@@ -4,6 +4,7 @@ import Binding1 from '@/components/binding/Binding1'
 import Binding2 from '@/components/binding/Binding2'
 import Monster from '@/components/Monster'
 import CalculatorContainer from '@/components/compByComp/CalculatorContainer'
+import Service from '@/components/masterDetail/ServiceMaster'
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ export default new Router({
       path: '/calculator',
       name: 'CalculatorContainer',
       component: CalculatorContainer
+    },
+    {
+      path: '/service',
+      name: 'Service',
+      component: Service
     }
     //     , {
     //   path: '/vue1',
