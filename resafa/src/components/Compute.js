@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import '../App.css'
 
 class Compute extends Component {
     constructor(props) {
@@ -51,7 +52,7 @@ class Compute extends Component {
                 break;
         }
         return(
-            <div>
+            <div className="paddingDiv">
                 <input name='oprand1' type='text' value={this.state.oprand1} onChange={this.changeOps.bind(this)}/>
                 <label onClick={this.changeOps.bind(this)}>{ops}</label>
                 <input name='oprand2'  type='text' value={this.state.oprand2} onChange={this.changeOps.bind(this)}/>

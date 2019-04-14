@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
-import CounterStore from '../stores/counter-store';
-import incrementAction from '../actions/counter-actions';
+import React, {Component} from 'react'
+import CounterStore from '../stores/counter-store'
+import incrementAction from '../actions/counter-actions'
+import '../App.css'
 
 class Counter extends Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class Counter extends Component {
     }
     render() {
         return (
-          <div>
+          <div className="paddingDiv">
               <p>Count: {this.state.count} </p>
               <button onClick={this.increment.bind(this)}>Increment 1</button>
           </div>

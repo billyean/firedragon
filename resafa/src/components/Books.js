@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import '../App.css'
 
 class Books extends Component {
     // constructor(props) {
@@ -7,7 +8,7 @@ class Books extends Component {
 
     render() {
         return (
-            <div>
+            <div className="paddingDiv">
                 This is just some books selection.
             </div>
         );
