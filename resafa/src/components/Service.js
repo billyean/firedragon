@@ -9,12 +9,12 @@ const service = (props) => {
         limit: props.limit
     })
 
-    const divstyle = {
-        padding: '40px'
+    const divtopstyle = {
+        paddingTop: '40px'
     }
 
     return (
-        <div style={divstyle}>
+        <div className={divtopstyle}>
             <p>
                 <label>Name : </label>
                 <input type="text" name="name" value={serviceState.name} onChange={(event) => setService({
