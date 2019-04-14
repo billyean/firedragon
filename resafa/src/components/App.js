@@ -49,6 +49,9 @@ class App extends Component {
                                 <li className="nav-item">
                                     <a className="nav-link" href="/reduxcounter">Redux Counter</a>
                                 </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/service">Service(useState)</a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
