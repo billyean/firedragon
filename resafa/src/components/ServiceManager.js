@@ -1,10 +1,10 @@
 import React from 'react'
-import service from './Service'
+import Service from './Service'
 
 const serviceManager =  () => {
     return (
-        <service name='Massage' description='Massage'
-            time_type='60, 90' rate='2.30' limit='Unlimited'></service>
+        <Service name='Massage' description='Massage'
+            timeType='60, 90' rate='2.30' limit='Unlimited' />
     );
 }
 
