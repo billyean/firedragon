@@ -8,6 +8,7 @@ const serviceList = (props) => {
             <td>{service.timeType}</td>
             <td>{service.rate}</td>
             <td>{service.limit}</td>
+            <td><button onClick={() => props.updateHandler(service.id)}>Update</button><button onClick={() => props.deleteHandler(service.id)}>Delete</button></td>
         </tr>)
     })
 
@@ -19,6 +20,7 @@ const serviceList = (props) => {
                 <th>Time Type</th>
                 <th>Rate</th>
                 <th>Limit</th>
+                <th>Action</th>
             </thead>
             {rows}
         </table>
