@@ -5,7 +5,7 @@ import ServiceList from "./ServiceList";
 const serviceManager =  () => {
     const [serviceList, setServiceList] = useState({services: [
             {
-                id: '1',
+                id: 1,
                 name: 'Massage',
                 description: 'Massage',
                 timeType: '60, 90',
@@ -13,7 +13,7 @@ const serviceManager =  () => {
                 limit: 'Unlimited'
             },
             {
-                id: '2',
+                id: 2,
                 name: 'Massage1',
                 description: 'Massage1',
                 timeType: '90, 180',
@@ -23,13 +23,13 @@ const serviceManager =  () => {
         ]})
 
     const [changingService, setChangingService] = useState({
-        id: '',
+        id: 0,
         name: '',
         description: '',
         timeType: '',
         rate: '',
         limit: '',
-        show: false
+        show: '1'
     })
 
     const divstyle = {
@@ -40,7 +40,7 @@ const serviceManager =  () => {
         let updateService = serviceList.services.find(service => service.id === id)
         setChangingService({
             ...updateService,
-            show: true
+            show: '3'
         })
     }
 
@@ -50,10 +50,33 @@ const serviceManager =  () => {
         })
     }
 
+    const createService = () => {
+        const topId = Math.max(serviceList.services.map(service => service.id))
+        alert(changingService.name)
+        let newService = Object.assign({}, {
+            id: topId + 1,
+            name: changingService.name,
+            description: changingService.description,
+            timeType: changingService.timeType,
+            rate: changingService.rate,
+            limit: changingService.limit
+        })
+        alert(newService.name)
+        let services = serviceList.services
+        services.push(newService)
+        setServiceList({
+            services
+        })
+    }
+
+    const updateService = () => {
+
+    }
+
     const showCreation = () => {
         setChangingService({
             ...changingService,
-            show: true
+            show: '2'
         })
     }
 
@@ -73,8 +96,8 @@ const serviceManager =  () => {
         <div style={divstyle}>
             <ServiceList services={serviceList.services} deleteHandler={deleteService} updateHandler={showUpdate}/>
             <button onClick={showCreation}>Create Service</button>
-            <Service name={changingService.name} description={changingService.description}
-                     timeType={changingService.timeType} rate={changingService.rate} limit={changingService.limit} show={changingService.show} cancelCreation={cancelCreation}/>
+            <Service serviceState={changingService} setService={setChangingService} cancelCreation={cancelCreation}
+                     createService={createService} updateService={updateService}/>
         </div>
 
     )
