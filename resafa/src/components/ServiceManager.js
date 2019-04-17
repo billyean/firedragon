@@ -22,9 +22,17 @@ const serviceManager =  () => {
         })
     }
 
+    const cancelCreation = () => {
+        setCreating({
+            ...creating,
+            show: false
+        })
+    }
+
     return (
         <div style={divstyle}>
             <button onClick={showCreation}>Create Service</button>
+            <button onClick={cancelCreation}>Cancel</button>
             <Service name={creating.name} description={creating.description}
                      timeType={creating.timeType} rate={creating.rate} limit={creating.limit} show={creating.show} />
         </div>
