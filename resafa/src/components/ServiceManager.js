@@ -48,6 +48,7 @@ const serviceManager =  () => {
         setServiceList({
             services: serviceList.services.filter(service => service.id !== id)
         })
+        cancelCreation()
     }
 
     const createService = () => {

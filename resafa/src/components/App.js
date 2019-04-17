@@ -47,7 +47,7 @@ class App extends Component {
                                     <a className="nav-link" href="/compute">Compute</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/reduxcounter">Redux Counter</a>
+                                    <a className="nav-link disabled" href="/reduxcounter">Redux Counter</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="/service">Service(useState)</a>
