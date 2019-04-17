@@ -65,6 +65,7 @@ const service = (props) => {
                         limit: event.target.value,
                     })}/>
                 </p>
+                <p><button onClick={props.cancelCreation}>Cancel</button></p>
             </div>
     )
 }

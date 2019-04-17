@@ -51,9 +51,8 @@ const serviceManager =  () => {
         <div style={divstyle}>
             <ServiceList services={list.services}/>
             <button onClick={showCreation}>Create Service</button>
-            <button onClick={cancelCreation}>Cancel</button>
             <Service name={creating.name} description={creating.description}
-                     timeType={creating.timeType} rate={creating.rate} limit={creating.limit} show={creating.show} />
+                     timeType={creating.timeType} rate={creating.rate} limit={creating.limit} show={creating.show} cancelCreation={cancelCreation}/>
         </div>
 
     )
