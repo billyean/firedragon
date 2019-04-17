@@ -56,15 +56,6 @@ class App extends Component {
                         </div>
                     </nav>
                 </header>
-                {/*<header>*/}
-                    {/*<nav>*/}
-                        {/*<span style={style}><a href='/people'>People</a></span>*/}
-                        {/*<span style={style}><a href='/books'>Books</a></span>*/}
-                        {/*<span style={style}><a href='/counter'>Counter</a></span>*/}
-                        {/*<span style={style}><a href='/compute'>Compute</a></span>*/}
-
-                    {/*</nav>*/}
-                {/*</header>*/}
                 <Provider store={store}>
                     { this.props.children }
                 </Provider>

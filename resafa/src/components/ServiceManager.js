@@ -53,7 +53,6 @@ const serviceManager =  () => {
 
     const createService = () => {
         const topId = Math.max(serviceList.services.map(service => service.id))
-        alert(changingService.name)
         let newService = Object.assign({}, {
             id: topId + 1,
             name: changingService.name,
@@ -62,7 +61,6 @@ const serviceManager =  () => {
             rate: changingService.rate,
             limit: changingService.limit
         })
-        alert(newService.name)
         let services = serviceList.services
         services.push(newService)
         setServiceList({
