@@ -1,14 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 const service = (props) => {
-    // const [serviceState, setService] = useState({
-    //     name: props.name,
-    //     description: props.description,
-    //     timeType: props.timeType,
-    //     rate: props.rate,
-    //     limit: props.limit
-    // })
-
     const divtopstyle = {
         paddingTop: '40px'
     }
@@ -18,6 +10,7 @@ const service = (props) => {
                 <p>
                     <label>Name : </label>
                     <input type="text" name="name" value={props.serviceState.name} onChange={(event) => props.setService({
+                        id: props.serviceState.id,
                         name: event.target.value,
                         description: props.serviceState.description,
                         timeType: props.serviceState.timeType,
@@ -29,6 +22,7 @@ const service = (props) => {
                 <p>
                     <label>Description : </label>
                     <input type="text" name="description" value={props.serviceState.description} onChange={(event) => props.setService({
+                        id: props.serviceState.id,
                         name: props.serviceState.name,
                         description: event.target.value,
                         timeType: props.serviceState.timeType,
@@ -40,6 +34,7 @@ const service = (props) => {
                 <p>
                     <label>Time Type : </label>
                     <input type="text" name="timeType" value={props.serviceState.timeType} onChange={(event) => props.setService({
+                        id: props.serviceState.id,
                         name: props.serviceState.name,
                         description: props.serviceState.description,
                         timeType: event.target.value,
@@ -51,6 +46,7 @@ const service = (props) => {
                 <p>
                     <label>Rate : </label>
                     <input type="text" name="rate" value={props.serviceState.rate} onChange={(event) => props.setService({
+                        id: props.serviceState.id,
                         name: props.serviceState.name,
                         description: props.serviceState.description,
                         timeType: props.serviceState.timeType,
@@ -62,6 +58,7 @@ const service = (props) => {
                 <p>
                     <label>Limit : </label>
                     <input type="text" name="limit" value={props.serviceState.limit} onChange={(event) => props.setService({
+                        id: props.serviceState.id,
                         name: props.serviceState.name,
                         description: props.serviceState.description,
                         timeType: props.serviceState.timeType,

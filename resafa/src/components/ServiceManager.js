@@ -67,10 +67,30 @@ const serviceManager =  () => {
         setServiceList({
             services
         })
+        cancelCreation()
     }
 
     const updateService = () => {
-
+        const newService = Object.assign({}, {
+            id: changingService.id,
+            name: changingService.name,
+            description: changingService.description,
+            timeType: changingService.timeType,
+            rate: changingService.rate,
+            limit: changingService.limit
+        })
+        let services = []
+        for (let i in serviceList.services) {
+            if (serviceList.services[i].id !== newService.id) {
+                services.push(serviceList.services[i])
+            } else {
+                services.push(newService)
+            }
+        }
+        setServiceList({
+            services: services
+        })
+        cancelCreation()
     }
 
     const showCreation = () => {
@@ -88,7 +108,7 @@ const serviceManager =  () => {
             timeType: '',
             rate: '',
             limit: '',
-            show: false
+            show: '1'
         })
     }
 
