@@ -8,7 +8,7 @@ const serviceManager =  () => {
         timeType: '60, 90',
         rate: '2.30',
         limit: 'Unlimited',
-        show: true
+        show: false
     })
 
     const divstyle = {
@@ -16,17 +16,20 @@ const serviceManager =  () => {
     }
 
     const showCreation = () => {
-
+        setCreating({
+            ...creating,
+            show: true
+        })
     }
 
     return (
         <div style={divstyle}>
             <button onClick={showCreation}>Create Service</button>
             <Service name={creating.name} description={creating.description}
-                     timeType={creating.timeType} rate={creating.rate} limit={creating.limit} />
+                     timeType={creating.timeType} rate={creating.rate} limit={creating.limit} show={creating.show} />
         </div>
 
-    );
+    )
 }
 
 export default serviceManager;
