@@ -55,8 +55,7 @@ const serviceManager =  () => {
         const topId = Math.max(...serviceList.services.map(service => service.id))
         let newService = {...changingService, id: topId + 1}
         delete newService.show
-        let services = [...serviceList.services]
-        services.push(newService)
+        let services = [...serviceList.services, newService]
         setServiceList({
             services
         })
@@ -78,7 +77,12 @@ const serviceManager =  () => {
 
     const showCreation = () => {
         setChangingService({
-            ...changingService,
+            id: '',
+            name: '',
+            description: '',
+            timeType: '',
+            rate: '',
+            limit: '',
             show: '2'
         })
     }
