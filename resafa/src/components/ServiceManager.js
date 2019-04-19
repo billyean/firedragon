@@ -53,14 +53,17 @@ const serviceManager =  () => {
 
     const createService = () => {
         const topId = Math.max(serviceList.services.map(service => service.id))
-        let newService = Object.assign({}, {
-            id: topId + 1,
-            name: changingService.name,
-            description: changingService.description,
-            timeType: changingService.timeType,
-            rate: changingService.rate,
-            limit: changingService.limit
-        })
+        let newService = {...changingService, id: topId + 1}
+        delete newService.show
+
+        // let newService = Object.assign({}, {
+        //     id: topId + 1,
+        //     name: changingService.name,
+        //     description: changingService.description,
+        //     timeType: changingService.timeType,
+        //     rate: changingService.rate,
+        //     limit: changingService.limit
+        // })
         let services = serviceList.services
         services.push(newService)
         setServiceList({
@@ -70,17 +73,11 @@ const serviceManager =  () => {
     }
 
     const updateService = () => {
-        const newService = Object.assign({}, {
-            id: changingService.id,
-            name: changingService.name,
-            description: changingService.description,
-            timeType: changingService.timeType,
-            rate: changingService.rate,
-            limit: changingService.limit
-        })
+        let updateService = {...changingService}
+        delete updateService.show
         let services = [...serviceList.services]
         const updateIndex = services.findIndex(s => s.id === changingService.id)
-        services.splice(updateIndex, 1, newService)
+        services.splice(updateIndex, 1, updateService)
 
         // let services = []
         // for (let i in serviceList.services) {
