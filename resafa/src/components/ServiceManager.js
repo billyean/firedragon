@@ -78,14 +78,18 @@ const serviceManager =  () => {
             rate: changingService.rate,
             limit: changingService.limit
         })
-        let services = []
-        for (let i in serviceList.services) {
-            if (serviceList.services[i].id !== newService.id) {
-                services.push(serviceList.services[i])
-            } else {
-                services.push(newService)
-            }
-        }
+        let services = [...serviceList.services]
+        const updateIndex = services.findIndex(s => s.id === changingService.id)
+        services.splice(updateIndex, 1, newService)
+
+        // let services = []
+        // for (let i in serviceList.services) {
+        //     if (serviceList.services[i].id !== newService.id) {
+        //         services.push(serviceList.services[i])
+        //     } else {
+        //         services.push(newService)
+        //     }
+        // }
         setServiceList({
             services: services
         })
