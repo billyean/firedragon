@@ -3,6 +3,7 @@ import React from 'react'
 const serviceList = (props) => {
     const rows = props.services.map((service) => {
         return (<tr>
+            <td>{service.id}</td>
             <td>{service.name}</td>
             <td>{service.description}</td>
             <td>{service.timeType}</td>
@@ -15,6 +16,7 @@ const serviceList = (props) => {
     return (
         <table>
             <thead>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Time Type</th>
