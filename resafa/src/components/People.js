@@ -28,7 +28,6 @@ class People extends Component {
     }
 
     add(p) {
-        console.log(`add person name ${p.name}`);
         this.setState({
             'people': [...this.state.people, p]
         })
