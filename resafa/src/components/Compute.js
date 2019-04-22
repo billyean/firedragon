@@ -75,15 +75,31 @@ class Compute extends Component {
                 break;
         }
         return(
-            <div className="paddingDiv">
-                <p>
-                    <input name="operand1" type='number' value={this.state.operand1} onChange={(event) => this.changeOperand(event)}/>
-                    <label onClick={this.changeOperator.bind(this)}>{ops}</label>
-                    <input name="operand2" type='number' value={this.state.operand2} onChange={(event) => this.changeOperand(event)}/>
-                    <label>=</label>
-                    <label >{this.state.result}</label>
-                </p>
-                <p><button onClick={this.changeOperator}>Random change operator</button></p>
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <input name="operand1" type='number' value={this.state.operand1} onChange={(event) => this.changeOperand(event)}/>
+                    </div>
+                    <div className="col">
+                        <label onClick={this.changeOperator.bind(this)}>{ops}</label>
+                    </div>
+                    <div className="col">
+                        <input name="operand2" type='number' value={this.state.operand2} onChange={(event) => this.changeOperand(event)}/>
+                    </div>
+                    <div className="col">
+                        =
+                    </div>
+                    <div className="col">
+                        <label >{this.state.result}</label>
+                    </div>
+                    <div className="col"></div>
+                    <div className="col"></div>
+                    <div className="col"></div>
+                    <div className="col"></div>
+                </div>
+                <div className="row">
+                    <p><button onClick={this.changeOperator}>Random change operator</button></p>
+                </div>
             </div>
         );
     }
