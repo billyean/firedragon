@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 // import {Link} from 'react-router-dom';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import {StyleRoot} from 'radium'
 
 // class X extends Component {
 //   render() {
@@ -29,6 +30,7 @@ class App extends Component {
 
     render() {
         return(
+            <StyleRoot>
             <div>
                 <header>
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -60,6 +62,7 @@ class App extends Component {
                     { this.props.children }
                 </Provider>
             </div>
+            </StyleRoot>
         );
     }
 }

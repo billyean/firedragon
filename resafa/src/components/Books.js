@@ -15,6 +15,10 @@ class Books extends Component {
                 backgroundColor: 'orange',
                 color: 'red',
                 cursor: 'pointer'
+            },
+            '@media (min-width: 500px)': {
+                backgroundColor: 'grey',
+                color: 'white'
             }
         };
 
