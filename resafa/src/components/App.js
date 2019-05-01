@@ -54,6 +54,9 @@ class App extends Component {
                                 <li className="nav-item">
                                     <a className="nav-link" href="/service">Service(useState)</a>
                                 </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/lifecycle">Life Cycle</a>
+                                </li>
                             </ul>
                         </div>
                     </nav>

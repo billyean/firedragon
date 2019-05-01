@@ -8,6 +8,7 @@ import Books from './components/Books'
 import Compute from './components/Compute'
 import ReduxCounter from './components/ReduxCounter'
 import serviceManager from './components/services/ServiceManager'
+import LifeCycle from './components/lifecycle/LifeCycle'
 import {Route, BrowserRouter, Switch} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -28,6 +29,7 @@ ReactDOM.render((
                 <Route path='/compute' component={Compute}/>
                 <Route path='/reduxcounter' component={ReduxCounter}/>
                 <Route path='/service' component={serviceManager}/>
+                <Route path='/lifecycle' component={LifeCycle}/>
             </Switch>
         </BrowserRouter>
     </App>), document.getElementById('root'));
