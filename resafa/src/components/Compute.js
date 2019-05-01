@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import '../App.css'
+import '../css/App.css'
+import classes from '../css/Compute.css'
 
 class Compute extends Component {
     constructor(props) {
@@ -81,7 +82,7 @@ class Compute extends Component {
                         <input name="operand1" type='number' value={this.state.operand1} onChange={(event) => this.changeOperand(event)}/>
                     </div>
                     <div className="col">
-                        <label onClick={this.changeOperator.bind(this)}>{ops}</label>
+                        <label className={classes.label} onClick={this.changeOperator.bind(this)}>{ops}</label>
                     </div>
                     <div className="col">
                         <input name="operand2" type='number' value={this.state.operand2} onChange={(event) => this.changeOperand(event)}/>

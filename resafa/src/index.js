@@ -7,7 +7,7 @@ import Counter from './components/Counter'
 import Books from './components/Books'
 import Compute from './components/Compute'
 import ReduxCounter from './components/ReduxCounter'
-import serviceManager from './components/ServiceManager'
+import serviceManager from './components/services/ServiceManager'
 import {Route, BrowserRouter, Switch} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';

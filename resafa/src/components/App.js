@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import {NavLink} from 'react-router-dom';
 // import {Link} from 'react-router-dom';
-import '../App.css';
+import '../css/App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import {StyleRoot} from 'radium'
 

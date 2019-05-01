@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import CounterStore from '../stores/counter-store'
 import incrementAction from '../actions/counter-actions'
-import '../App.css'
+import '../css/App.css'
 
 const style = {
     textAlign: 'center'
